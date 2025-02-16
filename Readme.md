@@ -1,65 +1,64 @@
 # Valorant Kill Detection using Deep Learning
 
-Ce projet utilise un modèle de deep learning pour détecter automatiquement les moments de "kill" dans des vidéos de **Valorant**. Le modèle est formé à partir d'un jeu d'images étiquetées représentant des moments de kill et non-kill. Il utilise un réseau de neurones convolutif (CNN) pour classer les images.
+This project uses a deep learning model to automatically detect "kill" moments in **Valorant** videos. The model is trained using a labeled dataset of images representing kill and non-kill moments. It uses a Convolutional Neural Network (CNN) to classify the images.
 
-## Fonctionnalités
-- **Prédiction**: Le modèle peut prédire si une image donnée correspond à un moment de kill ou non dans une vidéo de **Valorant**.
-- **Prétraitement des images**: Redimensionnement et ajout de padding pour les images avant de les soumettre au modèle.
-- **Prédiction en lot**: Le modèle peut renommer automatiquement toutes les images dans un répertoire en fonction de la classe prédite (kill / not kill).
-
+## Features
+- **Prediction**: The model can predict whether a given image corresponds to a kill moment or not in a **Valorant** video.
+- **Image Preprocessing**: Resizing and padding of images before they are fed into the model.
+- **Batch Prediction**: The model can automatically rename all images in a directory based on the predicted class (kill / not kill).
 
 <div align="center">
 
 ![alt text](Figure/Figure_1.png)
-*Figure du d'activation de la 2éme couche de convolution*  
+*Figure showing the activation of the second convolutional layer*
 
 </div>
 
-## Prérequis
+## Prerequisites
 
-Assurez-vous que vous avez installé les bibliothèques suivantes:
-- `tensorflow` : pour créer et entraîner le modèle.
-- `keras` : utilisé avec TensorFlow pour faciliter la création du modèle.
-- `opencv-python` : pour le traitement d'images.
-- `numpy` : pour la manipulation des matrices et tableaux.
-- `matplotlib` : pour afficher des graphiques et images.
-- `pathlib` : pour la gestion des chemins de fichiers.
+Ensure you have the following libraries installed:
+- `tensorflow`: for creating and training the model.
+- `keras`: used with TensorFlow to simplify model creation.
+- `opencv-python`: for image processing.
+- `numpy`: for handling matrices and arrays.
+- `matplotlib`: for displaying graphs and images.
+- `pathlib`: for file path management.
 
 ### Installation
-1. Clonez le repository:
+1. Clone the repository:
     ```bash
     git clone https://github.com/yourusername/valorant-kill-detection.git
     cd valorant-kill-detection
     ```
 
-2. Créez un environnement virtuel et installez les dépendances:
+2. Create a virtual environment and install dependencies:
     ```bash
     python -m venv venv
-    source venv/bin/activate  # Pour Linux/MacOS
-    venv\Scripts\activate     # Pour Windows
+    source venv/bin/activate  # For Linux/MacOS
+    venv\\Scripts\\activate     # For Windows
     pip install -r requirements.txt
     ```
 
-3. Assurez-vous d'avoir un répertoire `dataset` et `val_data` contenant des images étiquetées comme "kill" et "not_kill".
+3. Make sure you have a `dataset` and `val_data` directory containing labeled images as "kill" and "not_kill".
 
-## Structure du Projet
+## Project Structure
 
-- `dataset/`: Contient les images d'entraînement avec des sous-dossiers `kill` et `not_kill`.
-- `val_data/`: Contient des images de validation pour tester le modèle.
-- `predict/`: Contient des images non étiquetées que vous souhaitez prédire et renommer.
-- `model_final.h5`: Le modèle entraîné sauvegardé après l'entraînement.
-- `train_model.py`: Script principal pour entraîner le modèle et effectuer les prédictions.
+- `dataset/`: Contains training images with subfolders `kill` and `not_kill`.
+- `val_data/`: Contains validation images to test the model.
+- `predict/`: Contains unlabeled images you want to predict and rename.
+- `model_final.h5`: The trained model saved after training.
+- `train_model.py`: Main script to train the model and perform predictions.
 
-## Entraînement du modèle
+## Model Training
 
-Le modèle est un réseau de neurones convolutifs (CNN) qui suit les étapes suivantes:
+The model is a Convolutional Neural Network (CNN) that follows these steps:
 
-1. **Prétraitement des images**: Redimensionnement à une taille uniforme et ajout de padding si nécessaire.
-2. **Création du modèle**: Le modèle consiste en plusieurs couches convolutives et de pooling pour extraire les caractéristiques importantes des images.
-3. **Compilation et entraînement**: Le modèle est compilé avec l'optimiseur Adam et la fonction de perte `SparseCategoricalCrossentropy`, puis il est entraîné pendant 15 époques sur le jeu de données d'entraînement.
-4. **Évaluation**: Le modèle est évalué sur le jeu de données de validation pour vérifier ses performances.
+1. **Image Preprocessing**: Resizing to a uniform size and adding padding if necessary.
+2. **Model Creation**: The model consists of several convolutional and pooling layers to extract important features from the images.
+3. **Compilation and Training**: The model is compiled with the Adam optimizer and the `SparseCategoricalCrossentropy` loss function, then trained for 15 epochs on the training dataset.
+4. **Evaluation**: The model is evaluated on the validation dataset to check its performance.
 
-Pour entraîner le modèle, lancez simplement:
+To train the model, simply run:
 
 ```bash
 python train_model.py
