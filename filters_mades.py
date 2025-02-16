@@ -51,5 +51,5 @@ def visualize_filters(model_path, image_path):
 
 # Exécuter la visualisation
 model_path = 'model_final.h5'
-image_path = 'predict/kill_video_35_frame_12s.jpg'
+image_path = 'predict/kill_kill_kill__video_33_frame_14s.jpg'
 visualize_filters(model_path, image_path)

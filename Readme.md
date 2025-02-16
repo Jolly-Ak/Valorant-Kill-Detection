@@ -6,6 +6,12 @@ Ce projet utilise un modèle de deep learning pour détecter automatiquement les
 - **Prédiction**: Le modèle peut prédire si une image donnée correspond à un moment de kill ou non dans une vidéo de **Valorant**.
 - **Prétraitement des images**: Redimensionnement et ajout de padding pour les images avant de les soumettre au modèle.
 - **Prédiction en lot**: Le modèle peut renommer automatiquement toutes les images dans un répertoire en fonction de la classe prédite (kill / not kill).
+<div align="center">
+
+*Figure du d'activation de la 2éme couche de convolution*  
+![alt text](Figure/Figure_1.png)
+
+</div>
 
 ## Prérequis
 
