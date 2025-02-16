@@ -1,4 +1,4 @@
-# Valorant Kill Detection using Deep Learning
+# Valorant Kill Detection using Convolutional Neural Network
 
 This project uses a deep learning model to automatically detect "kill" moments in **Valorant** videos. The model is trained using a labeled dataset of images representing kill and non-kill moments. It uses a Convolutional Neural Network (CNN) to classify the images.
 
