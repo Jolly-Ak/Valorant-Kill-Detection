@@ -14,7 +14,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 
 #load the model
-model = tf.keras.models.load_model('model_final.h5')
+model = tf.keras.models.load_model('model_final_v2.h5')
 img_height = 220
 
 img_width = 220
