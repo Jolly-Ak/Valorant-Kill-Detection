@@ -2,7 +2,8 @@ import cv2
 import numpy as np
 from utility_image import detect_edges, kernel_horizontal, kernel_vertical
 from utility_dir import image_count
-import keras
+from tensorflow import keras
+# TODO : tchek if its working with keras of tensorflow
 import tensorflow as tf
 from tensorflow.keras.utils import load_img, img_to_array
 import pathlib
